@@ -1,7 +1,11 @@
+#MOSAIC
+
 ## What is the purpose of this Project?
 Provide a platform to coordinate between initiatives working on AI security standards and guidelines, to prevent inconsistencies, duplicate work, misalignment, and gaps.
 
-More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja)
+See [participant list](doc/participants.md).
+
+More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja).
 
 ## What problem/need are you trying to solve/fulfill?
 The promise of AI is pushing organizations to connect it to everything and entrust it with sensitive data. Across industries, this exploration is happening at speed.
