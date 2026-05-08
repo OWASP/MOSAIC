@@ -1,1 +1,8 @@
-
+Berryville Institute of Machine Learning (BIML)
+Center for Internet Security (CIS)
+Cloud Security Alliance (CSA)
+Coalition for Secure AI (CoSAI)
+National Institute of Standards and Technology (NIST)
+OWASP AI Exchange (AIX)
+OWASP GenAI Security Project (GenAIP)
+SANS Institute (SANS)
