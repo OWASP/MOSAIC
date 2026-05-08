@@ -1,4 +1,4 @@
-#MOSAIC
+# MOSAIC
 
 ## What is the purpose of this Project?
 Provide a platform to coordinate between initiatives working on AI security standards and guidelines, to prevent inconsistencies, duplicate work, misalignment, and gaps.
