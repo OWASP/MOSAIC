@@ -3,7 +3,7 @@
 ## What is the purpose of this Project?
 Provide a platform to coordinate between initiatives working on AI security standards and guidelines, to prevent inconsistencies, duplicate work, misalignment, and gaps.
 
-See [participant list](doc/participants.md).
+See [participant list](docs/participants.md).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja).
 
