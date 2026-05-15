@@ -2,11 +2,21 @@
 
 ## What is the purpose of this Project?
 MOSAIC provides a coordination structure for initiatives working on AI security standards and guidelines, reducing inconsistencies, duplicate work, misalignment, and gaps. 
-The end goal is to provide clear guidance for securing and overseeing the AI systems we increasingly connect to everything and trust with our sensitive data.
+The end goal is to let the standards and guideline landscape provide clear guidance for securing and overseeing the AI systems we increasingly connect to everything and trust with our sensitive data.
 
 See [participant list](docs/participants.md).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja).
+
+## How to use and contribute
+To participate: see the [contribution guide](CONTRIBUTING.MD).  
+To read: see this README document and the [docs folder](/docs).
+
+Types of users:
+- participating initiatives: coordinate as agreed
+- non-participating initiatives: use the information on this platform as input to your plans and content, join discussions, make suggestions, become a participant
+- others: use the information on this platform to better understand and use the landscape of standards and platforms, join discussions, make suggestions, or perhaps join initiatives.
+
 
 ## What problem/need are you trying to solve/fulfill?
 The promise of AI is pushing organizations to connect it to everything and entrust it with sensitive data. Across industries, this exploration is happening at speed.
