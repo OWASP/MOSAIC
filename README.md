@@ -6,7 +6,7 @@ The end goal is to let the standards and guideline landscape provide clear guida
 
 See [participant list](docs/participants.md).
 
-More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja).
+More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
 
 ## How to use and contribute
 To participate: see the [contribution guide](CONTRIBUTING.md).  
