@@ -3,11 +3,11 @@ This repository contains files (under 'code'), issues and discussions.
 # For whom?
 This platform is primarily for [MOSAIC participants](docs/participants.md), but as this is an open collaboration: MOSAIC welcomes input from others, as long as these are respectful and aiming to help.
 
-# How to use Issues
-Use GitHub Issues when something should lead to a concrete change in the files.
-
 # How to use Discussions
-Use GitHub Discussions when you want an open conversation before there is a clear action.
+Use GitHub Discussions for suggestions, ideas and questions.
+
+# How to use Issues
+We generally do not use GitHub Issues. 
 
 # How to propose a change to files
 
