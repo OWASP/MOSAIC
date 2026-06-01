@@ -1,5 +1,7 @@
 # MOSAIC
 
+[![MOSAIC launching group](docs/meeting-notes/images/launchinggroup.jpg)](docs/meeting-notes/images/launchinggroup.jpg)
+
 ## What is the purpose of this Project?
 MOSAIC provides a coordination structure for initiatives working on AI security standards and guidelines, reducing inconsistencies, duplicate work, misalignment, and gaps. 
 The end goal is to let the standards and guideline landscape provide clear guidance for securing and overseeing the AI systems we increasingly connect to everything and trust with our sensitive data.
