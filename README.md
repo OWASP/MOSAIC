@@ -11,7 +11,7 @@ See [participant list](docs/participants.md).
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
 
 ## How to use and contribute
-To participate: see the [contribution guide](CONTRIBUTING.md).  
+To participate: see the [contribution guide](CONTRIBUTING.md). Discussions can be found [here](https://github.com/OWASP/MOSAIC/discussions).   
 To read: see this README document and the [docs folder](/docs).
 
 Types of users:
