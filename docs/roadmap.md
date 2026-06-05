@@ -11,4 +11,5 @@ Milestone 1 (before August 1st 2026): The Charter (see [specific Charter discuss
 After Milestone 1:
 - continuing activities for alignment and exchange, and starting up new
 - onboard more organizations
-- seek alignment with SC42
+- appoint one steward per participating organization?
+- seek alignment with SC42?
