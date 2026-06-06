@@ -6,7 +6,7 @@
 MOSAIC provides a coordination structure for initiatives working on AI security standards and guidelines, reducing inconsistencies, duplicate work, misalignment, and gaps. 
 The end goal is to let the standards and guideline landscape provide clear guidance for securing and overseeing the AI systems we increasingly connect to everything and trust with our sensitive data.
 
-See [participant list](docs/participants.md).  
+See [MOSAIC member organizations](docs/memberorganizations.md).  
 See [roadmap](docs/roadmap.md).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
@@ -16,8 +16,8 @@ To participate: see the [contribution guide](CONTRIBUTING.md). Discussions can b
 To read: see this README document and the [docs folder](/docs).
 
 Types of users:
-- participating initiatives: coordinate as agreed
-- non-participating initiatives: use the information on this platform as input to your plans and content, join discussions, make suggestions, become a participant
+- member organizations: coordinate as agreed
+- non-member organizations: use the information on this platform as input to your plans and content, join discussions, make suggestions, become a member
 - others: use the information on this platform to better understand and use the landscape of standards and platforms, join discussions, make suggestions, or perhaps join initiatives.
 
 
