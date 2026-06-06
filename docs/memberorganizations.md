@@ -1,4 +1,4 @@
-MOSAIC Participants:
+MOSAIC Member Organizations:
 - Berryville Institute of Machine Learning (BIML)
 - Center for Internet Security (CIS)
 - Cloud Security Alliance (CSA)
