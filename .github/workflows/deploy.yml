@@ -28,17 +28,12 @@ jobs:
       - name: Build
         run: hugo --gc --minify
         working-directory: content/mosaic
-      - id: auth
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-      - name: Set live channel release retention
+      - name: Set hosting release retention
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
         run: |
-          curl -sf -X PATCH \
-            "https://firebasehosting.googleapis.com/v1beta1/sites/mozaic-56ca8/channels/live?updateMask=retainedReleaseCount" \
-            -H "Authorization: Bearer ${{ steps.auth.outputs.access_token }}" \
-            -H "Content-Type: application/json" \
-            -d '{"retainedReleaseCount": 5}'
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > "$GOOGLE_APPLICATION_CREDENTIALS"
+          node scripts/set-hosting-retention.js 5
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
