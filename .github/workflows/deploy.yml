@@ -12,6 +12,7 @@ on:
 permissions:
   contents: read
   deployments: write
+  checks: write
 
 jobs:
   deploy_live_website:

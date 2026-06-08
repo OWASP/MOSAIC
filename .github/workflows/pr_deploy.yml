@@ -14,6 +14,7 @@ permissions:
   contents: read
   pull-requests: write
   deployments: write
+  checks: write
 
 jobs:
   build_and_preview_same_repo:
