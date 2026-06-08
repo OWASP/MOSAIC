@@ -6,8 +6,10 @@ on:
       - main
     paths:
       - "content/mosaic/**"
+      - "scripts/set-hosting-retention.js"
       - ".github/workflows/deploy.yml"
       - "package.json"
+      - "package-lock.json"
 
 permissions:
   contents: read
@@ -19,7 +21,7 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -28,6 +30,12 @@ jobs:
       - name: Build
         run: hugo --gc --minify
         working-directory: content/mosaic
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
       - name: Set hosting release retention
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}

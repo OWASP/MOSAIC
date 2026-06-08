@@ -5,5 +5,8 @@
     "build:site": "cd content/mosaic && npx hugo-extended@0.147.0 --gc --minify",
     "serve": "npx serve content/mosaic/public -p 3000",
     "hosting:retention": "node scripts/set-hosting-retention.js 5"
+  },
+  "dependencies": {
+    "google-auth-library": "^10.5.0"
   }
 }
