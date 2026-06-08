@@ -1,0 +1,5 @@
+content/mosaic/public/
+content/mosaic/resources/
+content/mosaic/.hugo_build.lock
+content/mosaic/hugo_stats.json
+node_modules/

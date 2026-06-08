@@ -1,0 +1,37 @@
+name: Deploy to Live Channel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/mosaic/**"
+      - ".github/workflows/deploy.yml"
+      - "package.json"
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  deploy_live_website:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.147.0"
+          extended: true
+      - name: Build
+        run: hugo --gc --minify
+        working-directory: content/mosaic
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: mozaic-56ca8
+          target: mozaic-56ca8
+          channelId: live
+          entryPoint: content/mosaic

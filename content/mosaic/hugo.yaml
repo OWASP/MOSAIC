@@ -1,0 +1,17 @@
+baseURL: https://mozaic-56ca8.web.app/
+languageCode: en-us
+title: MOSAIC
+uglyURLs: true
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
+  - sitemap
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  githubRepo: OWASP/MOSAIC
