@@ -11,9 +11,22 @@ See [roadmap](docs/roadmap.md).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
 
+## Website
+
+The public site is a Hugo rebuild of the MOSAIC marketing site (same layout, CSS, and content as the original static HTML), deployed to Firebase Hosting from GitHub Actions.
+
+- Live: https://mozaic-56ca8.web.app (custom domain TBD)
+- Site source: [`content/mosaic/`](content/mosaic/) — pages, layouts, and `static/assets/`
+- Preview URLs are posted on pull requests (3-day expiry)
+- Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)
+
+### Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics (`https://mosaic.goatcounter.com`). No personal data is collected. See [CONTRIBUTING.md](CONTRIBUTING.md#analytics) for details.
+
 ## How to use and contribute
 To participate: see the [contribution guide](CONTRIBUTING.md). Discussions can be found [here](https://github.com/OWASP/MOSAIC/discussions).   
-To read: see this README document and the [docs folder](/docs).
+To read: see this README, the [docs folder](/docs), or the website.
 
 Types of users:
 - member organizations: coordinate as agreed

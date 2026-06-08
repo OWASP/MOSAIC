@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "mozaic-56ca8",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
