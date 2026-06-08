@@ -18,6 +18,11 @@ The public site is a Hugo rebuild of the MOSAIC marketing site (same layout, CSS
 - Live: https://mozaic-56ca8.web.app (custom domain TBD)
 - Site source: [`content/mosaic/`](content/mosaic/) — pages, layouts, and `static/assets/`
 - Preview URLs are posted on pull requests (3-day expiry)
+- Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)
+
+### Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics (`https://mosaic.goatcounter.com`). No personal data is collected. See [CONTRIBUTING.md](CONTRIBUTING.md#analytics) for details.
 
 ## How to use and contribute
 To participate: see the [contribution guide](CONTRIBUTING.md). Discussions can be found [here](https://github.com/OWASP/MOSAIC/discussions).   

@@ -30,10 +30,8 @@ jobs:
         working-directory: content/mosaic
       - name: Set hosting release retention
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
-        run: |
-          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > "$GOOGLE_APPLICATION_CREDENTIALS"
-          node scripts/set-hosting-retention.js 5
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: node scripts/set-hosting-retention.js 5
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
