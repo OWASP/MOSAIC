@@ -1,0 +1,9 @@
+{{- $href := .Get "href" -}}
+{{- $class := "btn" -}}
+{{- if .Get "primary" }}{{ $class = "btn btn-primary" }}{{ else if .Get "secondary" }}{{ $class = "btn btn-secondary" }}{{ end -}}
+{{- $external := .Get "external" -}}
+<a class="{{ $class }}" href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+  {{- if .Get "github" }}{{ partial "icons/github.html" . }}{{ end -}}
+  {{ .Inner }}
+  {{- if .Get "arrow" }}{{ partial "icons/arrow.html" . }}{{ end -}}
+</a>

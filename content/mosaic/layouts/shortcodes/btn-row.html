@@ -1,0 +1,3 @@
+<div class="btn-row"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+  {{ .Inner }}
+</div>

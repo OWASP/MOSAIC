@@ -1,0 +1,3 @@
+<div class="wrap"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+  {{ .Inner | .Page.RenderString }}
+</div>

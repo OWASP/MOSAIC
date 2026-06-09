@@ -1,0 +1,45 @@
+---
+description: Non-negotiable Hugo build and CI checks with evidence in handoff
+alwaysApply: true
+---
+
+# Verifiable Goals
+
+Agents need pass/fail checks to close the loop. Without verification, the human becomes the verification loop.
+
+## Required checks (site / content / layout changes)
+
+Run in order unless clearly irrelevant (explain why if skipped):
+
+1. `npm run build:site` — Hugo must build with zero errors
+2. `npm run serve` — optional visual spot-check at http://localhost:3000 when layout or CSS changed
+
+## Required checks (scripts / workflow changes)
+
+1. `npm run build:site` — ensure site still builds
+2. If `scripts/set-hosting-retention.js` changed: dry-run logic review; do not run against production without credentials and explicit user request
+
+## CI
+
+When preparing or fixing a PR: all workflow jobs must be green.
+Use `gh pr checks` or the GitHub Actions UI. Fix failures iteratively.
+
+Deploy workflows build Hugo from `content/mosaic/` and publish `public/` to Firebase Hosting.
+
+## Iterate until green
+
+- If any check fails, fix the failure and rerun from the failed step.
+- Do not hand off with failing checks unless blocked; document the blocker explicitly.
+- Before commit (when user asks): all relevant checks must pass.
+
+## Handoff evidence (mandatory)
+
+Report what you ran and the outcome — not assertions:
+
+```
+npm run build:site  — passed (N pages)
+npm run serve       — checked /roadmap.html (if applicable)
+gh pr checks        — all green (if PR-related)
+```
+
+If a check failed, show the Hugo error, the fix, and the rerun result.

@@ -1,0 +1,11 @@
+{{ with .Params.heading }}
+<div class="page-head">
+  <div class="wrap">
+    {{ with $.Params.breadcrumb }}
+    <div class="breadcrumb"><a href="/index.html">Home</a> / {{ . }}</div>
+    {{ end }}
+    <h1>{{ . }}</h1>
+    {{ with $.Params.subtitle }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+{{ end }}

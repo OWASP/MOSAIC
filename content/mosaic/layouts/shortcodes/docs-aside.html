@@ -1,0 +1,14 @@
+<aside class="docs-aside">
+  <div class="aside-label">On this page</div>
+  <nav>
+    {{- range split (.Inner | strings.TrimSpace) "\n" -}}
+    {{- $line := . | strings.TrimSpace -}}
+    {{- if $line -}}
+    {{- $parts := split $line "|" -}}
+    {{- $id := index $parts 0 | strings.TrimSpace -}}
+    {{- $label := index $parts 1 | strings.TrimSpace -}}
+    <a href="#{{ $id }}">{{ $label }}</a>
+    {{- end -}}
+    {{- end -}}
+  </nav>
+</aside>

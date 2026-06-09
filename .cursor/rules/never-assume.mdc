@@ -1,0 +1,33 @@
+---
+description: Verify or ask — no guessing packages, APIs, patterns, or incomplete code
+alwaysApply: true
+---
+
+# Never Assume
+
+| Do NOT | Instead |
+|--------|---------|
+| Assume file paths, shortcode names, or menu structure | Read `docs/website.md`; grep `content/mosaic/` |
+| Add new dependencies without explanation | State why, alternatives considered, and get approval |
+| Edit `content/mosaic/public/` | Build output is generated; edit source in `content/` and `layouts/` |
+| Replace code with placeholders, TODOs, or stubs | Ship complete markdown, layouts, and styles |
+| Write incomplete page content | Finish the page or stop and explain what's blocked |
+| Commit or push unless asked | Wait for explicit user request |
+| Commit secrets (`firebase-service-account.json`, tokens) | Use gitignored local files or CI secrets only |
+
+## Scope and diff discipline
+
+- Minimize scope — smallest correct diff; no drive-by refactors.
+- Match surrounding naming, shortcode style, and documentation level.
+- Comments only for non-obvious Hugo/template logic.
+- Do not add markdown/docs files the user did not ask for.
+- Do not use "made with cursor" or similar in commits.
+
+## MOSAIC conventions
+
+- Page content lives in `content/mosaic/content/*.md` only.
+- Navigation lives in `content/mosaic/data/menu.yaml`.
+- Internal links use ugly URLs: `/roadmap.html`, `/team.html`, etc.
+- Images go in `content/mosaic/static/assets/` and are referenced as `/assets/filename.ext`.
+- Use existing shortcodes before inventing new ones — see `docs/website.md`.
+- Prefer `npm run build:site` over ad-hoc Hugo invocations.

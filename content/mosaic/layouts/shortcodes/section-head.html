@@ -1,0 +1,6 @@
+<div class="section-head"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+  {{- with .Get "eyebrow" }}{{ partial "shortcodes/eyebrow-inline.html" (dict "text" .) }}{{ end -}}
+  {{- with .Get "title" }}<h3>{{ . }}</h3>{{ end -}}
+  {{- with .Get "subtitle" }}<p class="lede" style="margin-top:14px;">{{ . }}</p>{{ end -}}
+  {{ .Inner | .Page.RenderString }}
+</div>
