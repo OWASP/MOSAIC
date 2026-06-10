@@ -1,0 +1,8 @@
+<ul class="checklist"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+{{- range split (.Inner | strings.TrimSpace) "\n" -}}
+{{- $line := . | strings.TrimSpace -}}
+{{- if $line -}}
+<li>{{ $line | $.Page.RenderString }}</li>
+{{- end -}}
+{{- end -}}
+</ul>

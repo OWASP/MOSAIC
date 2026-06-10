@@ -27,6 +27,12 @@ Note: the files are typically documents, as this is a collaboration platform on 
 
 The public site lives in [`content/mosaic/`](content/mosaic/). It is built with Hugo and deployed to Firebase Hosting via GitHub Actions.
 
+**All page content is markdown.** To change what a page says, edit the `.md` files in [`content/mosaic/content/`](content/mosaic/content/). For navigation, edit [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml).
+
+For a full guide — directory map, shortcodes, adding pages, editing templates and CSS — see **[docs/website.md](docs/website.md)**.
+
+**AI coding agents (Cursor, etc.):** see **[AGENTS.md](AGENTS.md)** for repo-specific instructions and [`.cursor/rules/`](.cursor/rules/).
+
 ## Build locally
 
 ```bash

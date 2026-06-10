@@ -1,0 +1,5 @@
+{{- $class := "section" -}}
+{{- if .Get 0 }}{{ $class = printf "section section--%s" (.Get 0) }}{{ end -}}
+<section class="{{ $class }}">
+  {{ .Inner | .Page.RenderString }}
+</section>

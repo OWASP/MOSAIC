@@ -1,0 +1,6 @@
+{{- $class := "stage" -}}
+{{- if .Get "now" }}{{ $class = "stage is-now" }}{{ else if .Get "mid" }}{{ $class = "stage is-mid" }}{{ end -}}
+<div class="{{ $class }}"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+  {{- with .Get "when" }}<div class="when">{{ . }}</div>{{ end -}}
+  {{ .Inner | .Page.RenderString }}
+</div>

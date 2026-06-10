@@ -14,10 +14,12 @@ More information in this [linkedin post](https://www.linkedin.com/posts/robvande
 
 ## Website
 
-The public site is a Hugo rebuild of the MOSAIC marketing site (same layout, CSS, and content as the original static HTML), deployed to Firebase Hosting from GitHub Actions.
+The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
 
 - Live: https://mozaic-56ca8.web.app (custom domain TBD)
-- Site source: [`content/mosaic/`](content/mosaic/) — pages, layouts, and `static/assets/`
+- **Edit page content:** [`content/mosaic/content/*.md`](content/mosaic/content/) (markdown only)
+- **Edit navigation:** [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml)
+- **Full editing guide:** [docs/website.md](docs/website.md) — layouts, shortcodes, adding pages, CSS
 - Preview URLs are posted on pull requests (3-day expiry)
 - Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)
 

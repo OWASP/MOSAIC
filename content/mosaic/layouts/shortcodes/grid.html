@@ -1,0 +1,8 @@
+{{- $cols := .Get "cols" | default "2" -}}
+{{- $style := "" -}}
+{{- if .Get "align" }}{{ $style = printf "%salign-items:%s;" $style (.Get "align") }}{{ end -}}
+{{- if .Get "gap" }}{{ $style = printf "%sgap:%spx;" $style (.Get "gap") }}{{ end -}}
+{{- if .Get "style" }}{{ $style = printf "%s%s" $style (.Get "style") }}{{ end -}}
+<div class="grid grid-{{ $cols }}"{{ with $style }} style="{{ . | safeCSS }}"{{ end }}>
+  {{ .Inner | .Page.RenderString }}
+</div>

@@ -1,0 +1,33 @@
+# Site navigation — edit this file to add/remove/reorder menu items.
+# See docs/website.md for full instructions.
+
+main:
+  - label: Home
+    url: /index.html
+    match: home
+  - label: Roadmap
+    url: /roadmap.html
+    match: roadmap
+  - label: Team
+    url: /team.html
+    match: team
+  - label: News
+    url: /news.html
+    match: news
+  - label: Ecosystem
+    url: /collab.html
+    match: collab
+
+footer:
+  - label: News
+    url: /news.html
+  - label: Privacy
+    url: /privacy.html
+
+social:
+  - label: GitHub
+    url: https://github.com/OWASP/MOSAIC/#mosaic
+    icon: github
+  - label: LinkedIn
+    url: https://www.linkedin.com/company/mosaic-standards/about/
+    icon: linkedin

@@ -1,0 +1,12 @@
+<ul class="people">
+  {{- range split (.Inner | strings.TrimSpace) "\n" -}}
+  {{- $line := . | strings.TrimSpace -}}
+  {{- if $line -}}
+  {{- $parts := split $line "|" -}}
+  {{- $name := index $parts 0 | strings.TrimSpace -}}
+  {{- $org := "" -}}
+  {{- if ge (len $parts) 2 }}{{ $org = index $parts 1 | strings.TrimSpace }}{{ end -}}
+  <li>{{ $name }}{{ with $org }} <span class="org">{{ . }}</span>{{ end }}</li>
+  {{- end -}}
+  {{- end -}}
+</ul>

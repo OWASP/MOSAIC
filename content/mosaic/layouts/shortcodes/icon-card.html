@@ -1,0 +1,5 @@
+<div class="card">
+  {{ partial (printf "icons/card-%s.html" (.Get "icon")) . }}
+  {{- with .Get "title" }}<h3>{{ . }}</h3>{{ end -}}
+  {{ .Inner | markdownify }}
+</div>

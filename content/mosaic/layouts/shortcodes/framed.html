@@ -1,0 +1,3 @@
+<div class="framed"{{ with .Get "style" }} style="{{ . | safeCSS }}"{{ end }}>
+  {{ .Inner | .Page.RenderString }}
+</div>

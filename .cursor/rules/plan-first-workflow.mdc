@@ -1,0 +1,52 @@
+---
+description: Require Plan Mode and user approval before non-trivial implementation
+alwaysApply: true
+---
+
+# Plan-First Workflow
+
+Apply before non-trivial edits. When criteria overlap with `multi-agent-workflow.mdc` (e.g. new page, 3+ files), follow **multi-agent** Phase 1 — it is the stricter superset.
+
+## Skip planning only for
+
+- Typos, renames, obvious single-line fixes
+- Tasks fully specified with no design choices
+
+## MUST plan before implementing when ANY apply
+
+- New page, new shortcode, or new site-wide layout pattern
+- Multi-file change (3+ files) or >500 lines expected
+- Refactor of layouts/shortcodes with behavioral risk
+- Touches critical paths (deploy workflows, Firebase config, maintainer scripts, secrets)
+- Requirements have meaningful design choices
+
+## Plan output MUST include
+
+1. **Goal** — restated in one sentence
+2. **Files** — exact paths to create/modify/delete
+3. **Dependencies** — new npm packages, Hugo version, Firebase changes
+4. **Steps** — ordered implementation sequence
+5. **Content impact** — which markdown pages and menu entries change
+6. **Edge cases** — broken links, missing assets, mobile layout
+7. **Verification** — `npm run build:site`, optional `npm run serve`, CI
+8. **Risks** — what could break and how to detect it
+
+## Approval gate
+
+After presenting the plan, **wait for explicit user approval** ("proceed", "approved",
+or an edited plan confirmed by the user) before writing implementation code.
+
+Read-only research (grep, read files, explore codebase, read `docs/website.md`) is allowed during planning.
+
+Save approved plans to `.cursor/plans/<feature>.md` when scope is substantial.
+
+## Before editing (Agent Mode)
+
+- Brief plan with reasoning: goal, steps, files touched, validation approach.
+- For website work, consult `docs/website.md` for shortcodes and file locations.
+
+## While editing
+
+- Only modify code relevant to the request.
+- Never use placeholders — include complete, working content and templates.
+- **Reference patterns specifically:** e.g. mirror `@content/mosaic/content/news.md` for a new list page, or `@content/mosaic/layouts/shortcodes/card.html` for a new shortcode.

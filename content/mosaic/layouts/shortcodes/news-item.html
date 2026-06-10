@@ -1,0 +1,4 @@
+<article class="news-item">
+  {{- with .Get "source" }}<div class="source">{{ . }}</div>{{ end -}}
+  {{ .Inner | .Page.RenderString }}
+</article>

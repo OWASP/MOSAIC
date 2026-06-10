@@ -1,0 +1,6 @@
+<div class="org-chips">
+  {{- range split (.Inner | strings.TrimSpace) "\n" -}}
+  {{- $chip := . | strings.TrimSpace -}}
+  {{- if $chip }}<span class="org-chip">{{ $chip }}</span>{{ end -}}
+  {{- end -}}
+</div>

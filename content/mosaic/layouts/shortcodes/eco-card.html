@@ -1,0 +1,8 @@
+{{- $class := "card eco-card" -}}
+{{- if .Get "live" }}{{ $class = "card eco-card is-live" }}{{ end -}}
+<div class="{{ $class }}">
+  <span class="soon">{{ .Get "status" | default "TBD" }}</span>
+  {{- with .Get "icon" }}{{ partial (printf "icons/eco-%s.html" .) . }}{{ end -}}
+  {{- with .Get "title" }}<h3>{{ . }}</h3>{{ end -}}
+  {{ .Inner | .Page.RenderString }}
+</div>

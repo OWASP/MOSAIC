@@ -1,0 +1,52 @@
+---
+description: Stop and ask clarifying questions before coding when requirements are incomplete
+alwaysApply: true
+---
+
+# Requirements Gate
+
+If ANY of the following is missing or ambiguous, **STOP and ask clarifying questions**.
+Do NOT write, edit, or delete code until the gaps are filled.
+
+| Required | What to ask |
+|----------|-------------|
+| **Clear goal** | What outcome does the user want? What problem are we solving? |
+| **Verifiable success criteria** | Which checks must pass? (Hugo build, CI, manual preview) |
+| **Context references** | Which files, pages, or prior chats apply? Prefer `@path/to/file` refs when ambiguous. |
+| **Constraints** | Out of scope, URL compatibility, no new deps, Firebase/deploy impact, etc. |
+
+## Context references — when `@` refs are required
+
+- **Satisfied without `@`** when the message names specific paths or pages clearly (e.g. "update the hero text on the home page in `content/mosaic/content/_index.md`").
+- **Ask for `@` refs** when multiple files could apply, the shortcode/layout pattern to mirror is unclear, or prior chat/issue context is needed.
+
+## Skip the gate only when
+
+The request is fully specified in one sentence with obvious success criteria and unambiguous context, e.g.
+"Fix typo in README line 42" or "Change the Roadmap subtitle in `content/mosaic/content/roadmap.md`."
+
+## Requirements template (offer when info is missing)
+
+```
+## Task
+<One-sentence goal>
+
+## Success criteria (all must pass)
+- [ ] `npm run build:site`
+- [ ] Visual check via `npm run serve` (if layout/CSS changed)
+- [ ] CI green (`gh pr checks` or Actions UI)
+- [ ] Other: ___
+
+## Context
+- Files: @content/mosaic/content/roadmap.md
+- Pattern to mirror: @content/mosaic/content/news.md
+- Prior work: @Past Chats / issue # / PR #
+- Editing guide: @docs/website.md (for website work)
+
+## Constraints
+- In scope: ___
+- Out of scope: ___
+- Dependencies: none / explain before adding
+- Deploy: content-only / workflow / maintainer script
+- Secrets: never commit service account JSON
+```
