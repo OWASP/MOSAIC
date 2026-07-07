@@ -12,20 +12,6 @@ See [MOSAICstandards.org](https://mosaicstandards.org).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
 
-## Website
-
-The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
-
-- Live: https://mozaic-56ca8.web.app (custom domain TBD)
-- **Edit page content:** [`content/mosaic/content/*.md`](content/mosaic/content/) (markdown only)
-- **Edit navigation:** [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml)
-- **Full editing guide:** [docs/website.md](docs/website.md) — layouts, shortcodes, adding pages, CSS
-- Preview URLs are posted on pull requests (3-day expiry)
-- Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)
-
-### Analytics
-
-The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics (`https://mosaic.goatcounter.com`). No personal data is collected. See [CONTRIBUTING.md](CONTRIBUTING.md#analytics) for details.
 
 ## How to use and contribute
 To participate: see the [contribution guide](CONTRIBUTING.md). Discussions can be found [here](https://github.com/OWASP/MOSAIC/discussions).   
@@ -55,3 +41,19 @@ A strong risk appetite in a fast-moving field like AI is understandable. But ope
 Recent advances in AI vulnerability discovery, such as Mythos AI vulnerability discovery system, further increase urgency. They show that weaknesses in AI systems can now be found faster and at scale—often before developers are aware of them. This shifts the balance toward attackers and reduces the margin for error.
 
 This is why coordination matters. Aligning standards and guidance across initiatives reduces fragmentation, improves clarity, and gives practitioners a coherent path forward. It enables organizations to move fast without losing control.
+
+
+## Website
+
+The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
+
+- Live: https://mosaicstandards.org (custom domain TBD)
+- **Edit page content:** [`content/mosaic/content/*.md`](content/mosaic/content/) (markdown only)
+- **Edit navigation:** [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml)
+- **Full editing guide:** [docs/website.md](docs/website.md) — layouts, shortcodes, adding pages, CSS
+- Preview URLs are posted on pull requests (3-day expiry)
+- Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)
+
+### Analytics
+
+The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics (`https://mosaic.goatcounter.com`). No personal data is collected. See [CONTRIBUTING.md](CONTRIBUTING.md#analytics) for details.
