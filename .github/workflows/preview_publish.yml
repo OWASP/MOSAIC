@@ -1,0 +1,82 @@
+# Publishes the PR preview in the base repository, where
+# FIREBASE_SERVICE_ACCOUNT is available. Fork pull_request jobs cannot
+# see repository secrets, so they only upload an artifact.
+
+name: Publish Preview Channel
+
+on:
+  workflow_run:
+    workflows: ["Deploy to Preview Channel"]
+    types: [completed]
+
+permissions:
+  actions: read
+  checks: write
+  contents: read
+  deployments: write
+  pull-requests: write
+
+jobs:
+  publish_preview:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download preview artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: firebase-preview
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: preview-deploy
+
+      - name: Read pull request number
+        id: meta
+        run: |
+          pr=$(jq -r .pr_number preview-deploy/preview-meta.json)
+          echo "pr_number=$pr" >> "$GITHUB_OUTPUT"
+
+      - id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          expires: 3d
+          projectId: mozaic-56ca8
+          target: mozaic-56ca8
+          channelId: pr-${{ steps.meta.outputs.pr_number }}
+          entryPoint: preview-deploy
+
+      - name: Comment preview URL
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ steps.meta.outputs.pr_number }}
+          PREVIEW_URLS: ${{ steps.deploy.outputs.urls }}
+          EXPIRE_TIME: ${{ steps.deploy.outputs.expire_time }}
+        with:
+          script: |
+            const pr = Number(process.env.PR_NUMBER);
+            const urls = process.env.PREVIEW_URLS || '(no URL returned)';
+            const expire = process.env.EXPIRE_TIME || 'unknown';
+            const marker = '<!-- mosaic-firebase-preview -->';
+            const body = `${marker}\nFirebase preview for this PR:\n\n${urls}\n\nExpires: ${expire}`;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr,
+                body,
+              });
+            }
