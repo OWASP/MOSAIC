@@ -48,8 +48,8 @@ This is why coordination matters. Aligning standards and guidance across initiat
 The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
 
 - Live: https://mosaicstandards.org (custom domain TBD)
-- **Edit page content:** [`content/mosaic/content/*.md`](content/mosaic/content/) (markdown only)
-- **Edit navigation:** [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml)
+- **Edit page content:** [`website/content/*.md`](website/content/) (markdown only)
+- **Edit navigation:** [`website/data/menu.yaml`](website/data/menu.yaml)
 - **Full editing guide:** [docs/website.md](docs/website.md) — layouts, shortcodes, adding pages, CSS
 - Preview URLs are posted on pull requests (3-day expiry)
 - Maintainer scripts: see [CONTRIBUTING.md](CONTRIBUTING.md#website) (local build, Firebase release retention)

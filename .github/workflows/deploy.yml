@@ -1,21 +1,15 @@
 name: Deploy to Live Channel
-
 on:
   push:
     branches:
       - main
     paths:
-      - "content/mosaic/**"
-      - "scripts/set-hosting-retention.js"
+      - "website/**"
       - ".github/workflows/deploy.yml"
-      - "package.json"
-      - "package-lock.json"
-
 permissions:
   contents: read
   deployments: write
   checks: write
-
 jobs:
   deploy_live_website:
     environment: production
@@ -29,17 +23,20 @@ jobs:
           extended: true
       - name: Build
         run: hugo --gc --minify
-        working-directory: content/mosaic
+        working-directory: website
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: website/package-lock.json
       - run: npm ci
+        working-directory: website
       - name: Set hosting release retention
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: node scripts/set-hosting-retention.js 5
+        working-directory: website
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
@@ -47,4 +44,4 @@ jobs:
           projectId: mozaic-56ca8
           target: mozaic-56ca8
           channelId: live
-          entryPoint: content/mosaic
+          entryPoint: website

@@ -1,21 +1,14 @@
-# Preview deploy for PRs. Fork PRs use the production environment so a
-# maintainer can approve before secrets are used (see Settings → Environments).
-
 name: Deploy to Preview Channel
-
 on:
   pull_request:
     paths:
-      - "content/mosaic/**"
+      - "website/**"
       - ".github/workflows/**"
-      - "package.json"
-
 permissions:
   contents: read
   pull-requests: write
   deployments: write
   checks: write
-
 jobs:
   build_and_preview_same_repo:
     if: github.event.pull_request.head.repo.full_name == github.repository
@@ -32,7 +25,7 @@ jobs:
           extended: true
       - name: Build
         run: hugo --gc --minify
-        working-directory: content/mosaic
+        working-directory: website
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
@@ -40,8 +33,7 @@ jobs:
           expires: 3d
           projectId: mozaic-56ca8
           target: mozaic-56ca8
-          entryPoint: content/mosaic
-
+          entryPoint: website
   build_and_preview_fork:
     if: github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
@@ -57,7 +49,7 @@ jobs:
           extended: true
       - name: Build
         run: hugo --gc --minify
-        working-directory: content/mosaic
+        working-directory: website
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
@@ -65,4 +57,4 @@ jobs:
           expires: 3d
           projectId: mozaic-56ca8
           target: mozaic-56ca8
-          entryPoint: content/mosaic
+          entryPoint: website

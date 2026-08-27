@@ -2,7 +2,7 @@
 
 This guide explains how the MOSAIC public website is built, where every file lives, and exactly how to change content, navigation, layout, and styling.
 
-**Golden rule:** if you want to change *what the site says*, edit a `.md` file under `content/mosaic/content/`. You should not need to touch HTML templates for routine content updates.
+**Golden rule:** if you want to change *what the site says*, edit a `.md` file under `website/content/`. You should not need to touch HTML templates for routine content updates.
 
 ---
 
@@ -26,13 +26,13 @@ This guide explains how the MOSAIC public website is built, where every file liv
 
 ## How the site works
 
-The site is a [Hugo](https://gohugo.io/) static site rooted at `content/mosaic/`.
+The site is a [Hugo](https://gohugo.io/) static site rooted at `website/`.
 
 | Step | What happens |
 |------|----------------|
-| 1 | You edit markdown (`.md`) files in `content/mosaic/content/` |
+| 1 | You edit markdown (`.md`) files in `website/content/` |
 | 2 | Hugo merges each page's markdown with HTML **layouts** and **shortcodes** |
-| 3 | Hugo writes plain HTML to `content/mosaic/public/` |
+| 3 | Hugo writes plain HTML to `website/public/` |
 | 4 | GitHub Actions deploys `public/` to Firebase Hosting |
 
 Every page shares the same chrome (header, footer, fonts, CSS) via `layouts/_default/baseof.html`. Page bodies come from markdown.
@@ -44,7 +44,7 @@ Every page shares the same chrome (header, footer, fonts, CSS) via `layouts/_def
 ## Directory map
 
 ```
-content/mosaic/                  ← Hugo site root (run `hugo` from here)
+website/                  ← Hugo site root (run `hugo` from here)
 ├── hugo.yaml                    ← Site config (title, base URL, params)
 ├── content/                     ← ★ PAGE CONTENT — edit these .md files
 │   ├── _index.md                ← Home page
@@ -75,26 +75,30 @@ content/mosaic/                  ← Hugo site root (run `hugo` from here)
 │       ├── team.jpg
 │       └── roadmap.png
 ├── public/                      ← Build output (gitignored, do not edit)
+├── scripts/                     ← Maintainer scripts (set-hosting-retention.js); ignored by Hugo
+├── package.json                 ← npm project root (npx wrappers + deps); ignored by Hugo
+├── package-lock.json
 └── firebase.json                ← Firebase Hosting config
 
 docs/website.md                  ← This guide
 .github/workflows/deploy.yml     ← Production deploy on push to main
 ```
 
-**Not part of the website build:** `docs/` (repo documentation), root `README.md`, `scripts/`.
+**Not part of the website build:** `docs/` (repo documentation) and root `README.md`. Inside the Hugo root, `website/scripts/`, `website/package.json`, `website/package-lock.json`, and `node_modules/` are ignored by Hugo and never leak into `public/`.
 
 ---
 
 ## Build and preview locally
 
-From the repository root:
+From `website/` (the npm project root — `package.json` lives here):
 
 ```bash
-npm run build:site    # builds to content/mosaic/public/
+cd website
+npm run build:site    # builds to website/public/
 npm run serve         # serves public/ at http://localhost:3000
 ```
 
-Or from `content/mosaic/`:
+Or invoke Hugo directly, also from `website/`:
 
 ```bash
 npx hugo-extended@0.147.0 --gc --minify
@@ -111,12 +115,12 @@ After every content change, rebuild and refresh the browser. There is no hot-rel
 
 | Page | File |
 |------|------|
-| Home | `content/mosaic/content/_index.md` |
-| Roadmap | `content/mosaic/content/roadmap.md` |
-| Team | `content/mosaic/content/team.md` |
-| News | `content/mosaic/content/news.md` |
-| Ecosystem | `content/mosaic/content/collab.md` |
-| Privacy | `content/mosaic/content/privacy.md` |
+| Home | `website/content/_index.md` |
+| Roadmap | `website/content/roadmap.md` |
+| Team | `website/content/team.md` |
+| News | `website/content/news.md` |
+| Ecosystem | `website/content/collab.md` |
+| Privacy | `website/content/privacy.md` |
 
 ### Structure of a markdown page
 
@@ -297,7 +301,7 @@ Second item
 
 Navigation is **not** in the markdown pages. It lives in one data file:
 
-**File:** `content/mosaic/data/menu.yaml`
+**File:** `website/data/menu.yaml`
 
 ### Header menu
 
@@ -360,7 +364,7 @@ Example: add a **"Resources"** page at `/resources.html`.
 
 ### Step 1 — Create the markdown file
 
-Create `content/mosaic/content/resources.md`:
+Create `website/content/resources.md`:
 
 ```markdown
 ---
@@ -385,7 +389,7 @@ Your content here. Write in markdown.
 
 ### Step 2 — Add to the navigation
 
-Edit `content/mosaic/data/menu.yaml`:
+Edit `website/data/menu.yaml`:
 
 ```yaml
 main:
@@ -408,6 +412,7 @@ footer:
 ### Step 4 — Build and verify
 
 ```bash
+cd website
 npm run build:site
 npm run serve
 ```
@@ -532,7 +537,7 @@ baseof.html
 
 ### Adding a new shortcode
 
-1. Create `content/mosaic/layouts/shortcodes/my-component.html`
+1. Create `website/layouts/shortcodes/my-component.html`
 2. Use it in markdown: `{{< my-component >}}...{{< /my-component >}}`
 3. Document it in this file
 4. Rebuild
@@ -546,7 +551,7 @@ Shortcode templates can access:
 
 ### Site config
 
-**File:** `content/mosaic/hugo.yaml`
+**File:** `website/hugo.yaml`
 
 | Key | Purpose |
 |-----|---------|
@@ -560,7 +565,7 @@ Shortcode templates can access:
 
 ### Stylesheet
 
-**File:** `content/mosaic/static/assets/styles.css`
+**File:** `website/static/assets/styles.css`
 
 All visual design lives here: colors, typography, grids, cards, header, footer, responsive rules. CSS variables at the top (`:root`) define the brand palette.
 
@@ -568,7 +573,7 @@ After CSS changes, rebuild — Hugo copies `static/` files into `public/` unchan
 
 ### Images
 
-Place images in `content/mosaic/static/assets/`:
+Place images in `website/static/assets/`:
 
 | File | Used on |
 |------|---------|
@@ -590,7 +595,7 @@ GoatCounter snippet is in `layouts/_default/baseof.html`. See [CONTRIBUTING.md �
 
 ## Deployment
 
-- **Production:** pushing changes under `content/mosaic/` to `main` triggers `.github/workflows/deploy.yml`
+- **Production:** pushing changes under `website/` to `main` triggers `.github/workflows/deploy.yml`
 - **PR previews:** `.github/workflows/pr_deploy.yml` posts a temporary Firebase preview URL
 - **Live site:** https://mozaic-56ca8.web.app
 

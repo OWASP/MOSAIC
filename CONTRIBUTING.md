@@ -25,9 +25,9 @@ Note: the files are typically documents, as this is a collaboration platform on 
 
 # Website
 
-The public site lives in [`content/mosaic/`](content/mosaic/). It is built with Hugo and deployed to Firebase Hosting via GitHub Actions.
+The public site lives in [`website/`](website/). It is built with Hugo and deployed to Firebase Hosting via GitHub Actions.
 
-**All page content is markdown.** To change what a page says, edit the `.md` files in [`content/mosaic/content/`](content/mosaic/content/). For navigation, edit [`content/mosaic/data/menu.yaml`](content/mosaic/data/menu.yaml).
+**All page content is markdown.** To change what a page says, edit the `.md` files in [`website/content/`](website/content/). For navigation, edit [`website/data/menu.yaml`](website/data/menu.yaml).
 
 For a full guide — directory map, shortcodes, adding pages, editing templates and CSS — see **[docs/website.md](docs/website.md)**.
 
@@ -35,7 +35,10 @@ For a full guide — directory map, shortcodes, adding pages, editing templates 
 
 ## Build locally
 
+Run npm from the `website/` project root:
+
 ```bash
+cd website
 npm run build:site
 npm run serve
 ```
@@ -46,14 +49,15 @@ Open http://localhost:3000
 
 Hosting keeps previous releases for rollbacks. We cap retention at **5 releases per channel** (live and preview).
 
-Maintainers run [`scripts/set-hosting-retention.js`](scripts/set-hosting-retention.js) with the Firebase service account used for deploys. The script authenticates via one of:
+Maintainers run [`website/scripts/set-hosting-retention.js`](website/scripts/set-hosting-retention.js) with the Firebase service account used for deploys. The script authenticates via one of:
 
-1. **`firebase-service-account.json`** at the repository root (recommended locally). Copy the JSON from the `FIREBASE_SERVICE_ACCOUNT` GitHub Actions secret into this file. The file is gitignored — never commit it.
+1. **`firebase-service-account.json`** in the `website/` project root (recommended locally). Copy the JSON from the `FIREBASE_SERVICE_ACCOUNT` GitHub Actions secret into this file. The file is gitignored — never commit it.
 2. **`FIREBASE_SERVICE_ACCOUNT`** environment variable (JSON string; used in CI).
 3. **`GOOGLE_APPLICATION_CREDENTIALS`** environment variable (path to a service account JSON file).
 
 ```bash
-# after placing firebase-service-account.json in the repo root:
+cd website
+# after placing firebase-service-account.json in the website/ project root:
 npm run hosting:retention
 
 # or with an explicit count (1–100):
@@ -66,7 +70,7 @@ The live deploy workflow runs this automatically before each production deploy.
 
 ## Analytics
 
-The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics. The tracking snippet is in [`content/mosaic/layouts/_default/baseof.html`](content/mosaic/layouts/_default/baseof.html):
+The site uses [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free page view statistics. The tracking snippet is in [`website/layouts/_default/baseof.html`](website/layouts/_default/baseof.html):
 
 ```html
 <script data-goatcounter="https://mosaic.goatcounter.com/count"

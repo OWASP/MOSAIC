@@ -1,6 +1,6 @@
-content/mosaic/public/
-content/mosaic/resources/
-content/mosaic/.hugo_build.lock
-content/mosaic/hugo_stats.json
+website/public/
+website/resources/
+website/.hugo_build.lock
+website/hugo_stats.json
 node_modules/
 firebase-service-account.json

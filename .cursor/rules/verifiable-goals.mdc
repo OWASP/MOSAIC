@@ -17,14 +17,14 @@ Run in order unless clearly irrelevant (explain why if skipped):
 ## Required checks (scripts / workflow changes)
 
 1. `npm run build:site` — ensure site still builds
-2. If `scripts/set-hosting-retention.js` changed: dry-run logic review; do not run against production without credentials and explicit user request
+2. If `website/scripts/set-hosting-retention.js` changed: dry-run logic review; do not run against production without credentials and explicit user request
 
 ## CI
 
 When preparing or fixing a PR: all workflow jobs must be green.
 Use `gh pr checks` or the GitHub Actions UI. Fix failures iteratively.
 
-Deploy workflows build Hugo from `content/mosaic/` and publish `public/` to Firebase Hosting.
+Deploy workflows build Hugo from `website/` and publish `public/` to Firebase Hosting.
 
 ## Iterate until green
 

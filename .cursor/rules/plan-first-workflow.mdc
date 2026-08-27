@@ -49,4 +49,4 @@ Save approved plans to `.cursor/plans/<feature>.md` when scope is substantial.
 
 - Only modify code relevant to the request.
 - Never use placeholders — include complete, working content and templates.
-- **Reference patterns specifically:** e.g. mirror `@content/mosaic/content/news.md` for a new list page, or `@content/mosaic/layouts/shortcodes/card.html` for a new shortcode.
+- **Reference patterns specifically:** e.g. mirror `@website/content/news.md` for a new list page, or `@website/layouts/shortcodes/card.html` for a new shortcode.

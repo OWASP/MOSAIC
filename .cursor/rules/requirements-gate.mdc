@@ -17,13 +17,13 @@ Do NOT write, edit, or delete code until the gaps are filled.
 
 ## Context references — when `@` refs are required
 
-- **Satisfied without `@`** when the message names specific paths or pages clearly (e.g. "update the hero text on the home page in `content/mosaic/content/_index.md`").
+- **Satisfied without `@`** when the message names specific paths or pages clearly (e.g. "update the hero text on the home page in `website/content/_index.md`").
 - **Ask for `@` refs** when multiple files could apply, the shortcode/layout pattern to mirror is unclear, or prior chat/issue context is needed.
 
 ## Skip the gate only when
 
 The request is fully specified in one sentence with obvious success criteria and unambiguous context, e.g.
-"Fix typo in README line 42" or "Change the Roadmap subtitle in `content/mosaic/content/roadmap.md`."
+"Fix typo in README line 42" or "Change the Roadmap subtitle in `website/content/roadmap.md`."
 
 ## Requirements template (offer when info is missing)
 
@@ -38,8 +38,8 @@ The request is fully specified in one sentence with obvious success criteria and
 - [ ] Other: ___
 
 ## Context
-- Files: @content/mosaic/content/roadmap.md
-- Pattern to mirror: @content/mosaic/content/news.md
+- Files: @website/content/roadmap.md
+- Pattern to mirror: @website/content/news.md
 - Prior work: @Past Chats / issue # / PR #
 - Editing guide: @docs/website.md (for website work)
 

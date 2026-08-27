@@ -6,9 +6,9 @@ Cursor agents working in this repo must follow the rules in `.cursor/rules/`.
 
 MOSAIC (Multi-Organization Secure AI Coordination) is an open coordination project on the OWASP Foundation GitHub. This repository holds:
 
-- **Public website** — Hugo static site in `content/mosaic/` (markdown content, HTML layouts, CSS)
+- **Public website** — Hugo static site in `website/` (markdown content, HTML layouts, CSS)
 - **Project docs** — `docs/` (member orgs, roadmap notes, website editing guide)
-- **Deploy automation** — GitHub Actions → Firebase Hosting; `scripts/set-hosting-retention.js` for release retention
+- **Deploy automation** — GitHub Actions → Firebase Hosting; `website/scripts/set-hosting-retention.js` for release retention
 
 **Not in scope here:** application backends, databases, or Python/TypeScript app code. Content edits are markdown; structure changes use Hugo layouts and shortcodes.
 
@@ -26,12 +26,12 @@ MOSAIC (Multi-Organization Secure AI Coordination) is an open coordination proje
 
 | Task | Location |
 |------|----------|
-| Change page text | `content/mosaic/content/*.md` |
-| Change navigation | `content/mosaic/data/menu.yaml` |
-| Change page structure/components | `content/mosaic/layouts/shortcodes/` |
-| Change site chrome (header/footer) | `content/mosaic/layouts/partials/` |
-| Change styling | `content/mosaic/static/assets/styles.css` |
-| Add static images | `content/mosaic/static/assets/` |
+| Change page text | `website/content/*.md` |
+| Change navigation | `website/data/menu.yaml` |
+| Change page structure/components | `website/layouts/shortcodes/` |
+| Change site chrome (header/footer) | `website/layouts/partials/` |
+| Change styling | `website/static/assets/styles.css` |
+| Add static images | `website/static/assets/` |
 | Repo documentation | `docs/` |
 | Site editing guide (read first for website work) | `docs/website.md` |
 
@@ -51,28 +51,27 @@ MOSAIC (Multi-Organization Secure AI Coordination) is an open coordination proje
 ## MOSAIC commands
 
 ```bash
-npm run build:site        # Hugo build → content/mosaic/public/
+cd website                # npm project root — package.json lives here; run npm from here
+npm run build:site        # Hugo build → website/public/
 npm run serve             # Serve built site at http://localhost:3000
 npm run hosting:retention # Maintainers: cap Firebase release retention (needs service account)
 ```
 
-Hugo runs from `content/mosaic/` (see `package.json`). CI uses Hugo 0.147.0 extended — match that locally via `npm run build:site`.
+Hugo runs from `website/` (see `website/package.json`), which is also the npm project root — run all `npm run …` commands from `website/` (or use `npm --prefix website run build:site`). CI uses Hugo 0.147.0 extended — match that locally via `npm run build:site`.
 
 ## Website conventions
 
-- **Content is markdown only** — no `.html` files in `content/mosaic/content/`.
+- **Content is markdown only** — no `.html` files in `website/content/`.
 - **URLs** — `uglyURLs: true` → pages are `/roadmap.html`, `/team.html`, etc. Use root-relative links in markdown.
-- **Layout in shortcodes** — cards, sections, hero, news items, etc. live in `content/mosaic/layouts/shortcodes/`. See `docs/website.md` for the full shortcode reference.
-- **Do not edit** `content/mosaic/public/` — it is build output (gitignored).
+- **Layout in shortcodes** — cards, sections, hero, news items, etc. live in `website/layouts/shortcodes/`. See `docs/website.md` for the full shortcode reference.
+- **Do not edit** `website/public/` — it is build output (gitignored).
 - **Secrets** — never commit `firebase-service-account.json` or other credentials.
 
 ## Deploy paths (CI)
 
 Production deploy (`.github/workflows/deploy.yml`) triggers on changes under:
 
-- `content/mosaic/**`
-- `scripts/set-hosting-retention.js`
+- `website/**` (covers site content, `scripts/`, and `package.json` / `package-lock.json`, all now under `website/`)
 - `.github/workflows/deploy.yml`
-- `package.json` / `package-lock.json`
 
 PR previews use `.github/workflows/pr_deploy.yml`.
