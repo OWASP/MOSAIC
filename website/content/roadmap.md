@@ -1,6 +1,6 @@
 ---
 title: "Roadmap — MOSAIC"
-description: "The MOSAIC roadmap: current alignment activities, Milestone 1 (finalized charter, August 2026), and future expansion."
+description: "The MOSAIC roadmap: current alignment activities, Milestone 1 (finalized charter, November 2026), and future expansion."
 heading: "Roadmap"
 subtitle: "Where MOSAIC is today, the first milestone ahead, and how the collaboration grows from here."
 breadcrumb: "Roadmap"
@@ -40,12 +40,12 @@ Ad hoc **exchange of insights and information** between initiatives
 {{< /checklist >}}
 {{< /stage >}}
 
-## Milestone 1 — August 1, 2026 {#milestone-1}
+## Milestone 1 — November 2, 2026 {#milestone-1}
 
 {{< stage when="Target · August 1, 2026" mid="true" >}}
 ### Finalized charter
 
-Detail how MOSAIC and its participants work together, resulting in the MOSAIC charter —
+Detail how MOSAIC and its participants work together, resulting in the [MOSAIC charter](https://github.com/OWASP/MOSAIC/blob/main/docs/charter.md) —
 then agree on it at an institutional level, in addition to the personal commitments
 already made. This turns the founding intent into durable, shared rules of engagement.
 {{< /stage >}}
