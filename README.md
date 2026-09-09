@@ -8,6 +8,7 @@ The end goal is to let the standards and guideline landscape provide clear guida
 
 See [MOSAIC member organizations](docs/memberorganizations.md).  
 See [roadmap](docs/roadmap.md).
+See [charter](docs/charter.md).
 See [MOSAICstandards.org](https://mosaicstandards.org).
 
 More information in this [linkedin post](https://www.linkedin.com/posts/robvanderveer_on-april-21-2026-a-major-breakthrough-in-share-7454830488919281664-0Kja) and in the [notes of the launching meeting](docs/meeting-notes/20260521-MOSAIC-launch.md).
@@ -19,7 +20,7 @@ To read: see this README, the [docs folder](/docs), or the website.
 
 Types of users:
 - member organizations: coordinate as agreed
-- non-member organizations: use the information on this platform as input to your plans and content, join discussions, make suggestions, become a member
+- non-member organizations: use the information on this platform as input to your plans and content, join discussions, make suggestions, become a member (see [charter](docs/charter.md))
 - others: use the information on this platform to better understand and use the landscape of standards and platforms, join discussions, make suggestions, or perhaps join initiatives.
 
 
@@ -47,7 +48,7 @@ This is why coordination matters. Aligning standards and guidance across initiat
 
 The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
 
-- Live: https://mosaicstandards.org (custom domain TBD)
+- Live: https://mosaicstandards.org
 - **Edit page content:** [`website/content/*.md`](website/content/) (markdown only)
 - **Edit navigation:** [`website/data/menu.yaml`](website/data/menu.yaml)
 - **Full editing guide:** [docs/website.md](docs/website.md) — layouts, shortcodes, adding pages, CSS
