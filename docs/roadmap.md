@@ -6,10 +6,10 @@ First: Activities already starting (see [discussions]https://github.com/OWASP/MO
 - aligning on Agentic identity
 - ad hoc exchange of insights and information
 
-Milestone 1 (before August 1st 2026): The Charter (see [specific Charter discussion](https://github.com/OWASP/MOSAIC/discussions/22)). Detail how MOSAIC and its participants work, resulting in the Mosaic charter. Then agree on it at an institutional level, apart from the personal level.
+Milestone 1 (November 2 2026): Finalize the [Charter](/docs/charter.md) (see [specific Charter discussion](https://github.com/OWASP/MOSAIC/discussions/22)). Detail how MOSAIC and its participants work, resulting in the Mosaic charter. Then agree on it at an institutional level, apart from the personal level.
 
 After Milestone 1:
 - continuing activities for alignment and exchange, and starting up new
 - onboard more organizations
-- appoint one steward per participating organization?
-- seek alignment with SC42?
+- appoint one steward per participating organization
+- seek alignment with SC42
