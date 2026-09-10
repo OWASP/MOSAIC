@@ -10,6 +10,6 @@ Milestone 1 (November 2 2026): Finalize the [Charter](/docs/charter.md) (see [sp
 
 After Milestone 1:
 - continuing activities for alignment and exchange, and starting up new
-- onboard more organizations
+- onboard more organizations e.g. https://startupintros.com/orgs/artificial-intelligence-underwriting-company
 - appoint one steward per participating organization
 - seek alignment with SC42
