@@ -58,7 +58,7 @@ In short: Act by the principles in the charter including being transparent, have
 The organization nominates at least one representative who is directly involved in maintaining its relevant work, and can participate in taxonomy/alignment discussions or meetings. Participants should have sufficient mandate or influence within their organization to make alignment meaningful.
 
 **Members maintain transparency**  
-Members maintain the shared information about: their scope, deliverables, and roadmap - presented in the member cards, at least on a quarterly basis. They also share announcements on the MOSAIC platform when particularly relevant for the other MOSAIC members, including scope changes and initiative that may be interesting for others to join (eg. new expert groups, alignment initiatives.
+Members keep their member card current with public information about their in-scope work, including their scope, published deliverables, and publicly announced plans. At a minimum, members link the card to their page of resources. Members can also submit links to specific resources they want to highlight on the MOSAIC site and keep those links current. Members update the card when that information changes and review it at least once a year. They also share announcements on the MOSAIC platform when particularly relevant for other members. Examples include scope changes and new initiatives that others may want to join.
 
 **Members participate in discussions**  
 Members regularly take part in discussions on the MOSAIC platform relevant to them, including alignment on terminology and insights.
