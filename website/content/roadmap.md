@@ -17,7 +17,7 @@ expansion|Expansion & future
 {{< docs-main >}}
 <div id="overview"></div>
 {{< framed style="margin-bottom:40px;" >}}
-![MOSAIC roadmap diagram: a winding road moving from alignment activities, through Milestone 1 (finalized charter, August 1 2026), toward expansion and future alignment.](/assets/roadmap.png)
+![MOSAIC roadmap diagram: a winding road moving from alignment activities, through Milestone 1 (finalized charter, November 2 2026), toward expansion and future alignment.](/assets/roadmap2.png)
 {{< /framed >}}
 
 MOSAIC is built around lightweight coordination: a small set of concrete activities that
