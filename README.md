@@ -44,6 +44,23 @@ Recent advances in AI vulnerability discovery, such as Mythos AI vulnerability d
 This is why coordination matters. Aligning standards and guidance across initiatives reduces fragmentation, improves clarity, and gives practitioners a coherent path forward. It enables organizations to move fast without losing control.
 
 
+## How can I make sure my standard aligns with MOSAIC?
+
+Aligning with MOSAIC means aligning with the work that takes place within the MOSAIC members - as MOSAIC is the coordination mechanism.
+
+What to do:
+1. Make sure your standardisation org becomes part of MOSAIC. There's not much to it: agree to the [charter](/docs/charter.md), and put it in the lightweight effort that is described in it. To hightlight the key parts of aligning:
+2. Align on taxonomy, terms, and insights using the MOSAIC [discussions](/discussions)
+3. Share your work streams and plans, to allow others to a) use it, and b) align with it - seek collaboration.
+4. Try to contribute and/or to refer to existing work instead of starting something that is already going on elsewhere. The existing work is presented through the MOSAIC initiative system (work in progress).
+
+A great way to align on taxonomy and to refer to existing work, is to link the requirements in your standard to the requirement taxonomy at [OpenCRE.org](opencre.org).
+
+AI can be a great tool in supporting alignment as LLMs are powerful in comparing long documents and identifying overlap, gaps, and discrepancies. At the OpenCRE open source project, we are developing tools to support this processm and also to unlock the content of MOSAIC members.
+
+Last but not least, successful aligning of standards by definition requires sacrifice and compromise. Good alignment typically results in letting go of certain long-held beliefs, and 'killing your darlings'. Sometimes it is better to deprecate certain parts of text that required hard work, and instead refer to another source that covers the subject. The result of this sometimes painfull process is: less work to maintain, more focus on key content, more alignment, more clarity for practitioners, and therefore: better information systems, for a better world.
+
+
 ## Website
 
 The public site is a Hugo static site (markdown content, shared layouts, CSS in `static/assets/`), deployed to Firebase Hosting from GitHub Actions.
