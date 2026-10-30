@@ -22,7 +22,7 @@
 - choose referring to existing work over producing work that is similar to what already exists
 - don't overpromise:  remain transparent in  deliverables about the limitations of achieving security, and the reality of residual risks in AI
 
-## Activity at MOSAIC: MOSAIC participants....
+### Active MOSAIC participation: participants....
 - **act by the principles in the charter**
 - **are actively represented** by nominating at least one representative who is a subject matter expert that can participate in taxonomy/alignment discussions or meetings. Participants should have sufficient mandate or influence within their organization to make alignment meaningful (e.g. directly involved in maintaining its relevant resources).
 - **maintain transparency** by keeping their member card current with public information about their in-scope work, including their scope, deliverables, and publicly announced plans. Members update the card when that information changes and review it at least twice a year. They also share announcements on the MOSAIC platform when particularly relevant for other members. Examples include scope changes and new initiatives that others may want to join.
