@@ -6,4 +6,6 @@ MOSAIC Member Organizations:
 - National Institute of Standards and Technology (NIST)
 - OWASP AI Exchange (AIX)
 - OWASP GenAI Security Project (GenAIP)
+- OpenSSF
 - SANS Institute (SANS)
+  
