@@ -42,7 +42,7 @@ Ad hoc **exchange of insights and information** between initiatives
 
 ## Milestone 1 — November 2, 2026 {#milestone-1}
 
-{{< stage when="Target · August 1, 2026" mid="true" >}}
+{{< stage when="Target · November 2, 2026" mid="true" >}}
 ### Finalized charter
 
 Detail how MOSAIC and its participants work together, resulting in the [MOSAIC charter](https://github.com/OWASP/MOSAIC/blob/main/docs/charter.md) —
