@@ -2,7 +2,7 @@
 
 ### Vision
 - Possibilities and challenges of AI are rapidly evolving, and AI adoption is currently vastly outpacing AI security, leaving security as an afterthought.
-- Standards are currently fragmented, leading to uncertainty and a slowdown in innovation. A cohesive standards landscape is required to enable speed and safe adoption.
+- Standards are currently fragmented, leading to uncertainty and a slowdown in adoption. A cohesive standards landscape is required to enable speedy and safe adoption.
 - We currently have too many standards. There is a critical need to establish consensus, coordinate, and extract best practices across the existing standards.
 
 ### Coordination: MOSAIC participants....
